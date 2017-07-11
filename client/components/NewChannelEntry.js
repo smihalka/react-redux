@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {connect} from 'react-redux'
 
 export default function NewChannelEntry (props) {
   return (
@@ -15,3 +16,18 @@ export default function NewChannelEntry (props) {
 }
 
 /** Write your `connect` component below! **/
+
+
+const mapStateToProps = function (state) {
+    return {
+    }
+}
+
+const mapDispatchToProps = function(dispatch){
+   return{
+
+   }
+}
+
+const Container = connect(mapStateToProps,mapDispatchToProps )(NewChannelEntry)
+export default Container
