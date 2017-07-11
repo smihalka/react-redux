@@ -109,7 +109,7 @@ export function postChannel(channel) {
             .then(newChannel=> {
                 const action = getChannel(newChannel);
                 dispatch(action);
-                socket.emit('new-channel', newChannel);
+          //      socket.emit('new-channel', newChannel);
             });
     }
 }
