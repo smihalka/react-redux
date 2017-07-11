@@ -4,9 +4,10 @@ import NameEntry from './NameEntry';
 export default class Navbar extends Component {
 
   render () {
+
     return (
       <nav>
-        <h3># channelname goes here</h3>
+        <h3># thats the channel thing</h3>
         <NameEntry />
       </nav>
     );

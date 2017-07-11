@@ -18,18 +18,18 @@ export default class Main extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <Sidebar />
-                <Navbar />
-                <main>
-                    <Switch>
-                        <Route path="/new-channel" component={NewChannelEntry}/>
-                        <Route path="/channels/:channelId" component={MessagesList}/>
-                        <Redirect to="/channels/1"/>
-                    </Switch>
-                </main>
-            </div>
-        );
+      return (
+        <div>
+          <Sidebar />
+          <Navbar />
+          <main>
+            <Switch>
+              <Route path="/new-channel" component={NewChannelEntry}/>
+              <Route path="/channels/:channelId" component={MessagesList}/>
+              <Redirect to="/channels/1"/>
+            </Switch>
+          </main>
+        </div>
+      );
     }
-}
+  }
