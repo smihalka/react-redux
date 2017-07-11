@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux'
+import { withRouter } from 'react-router'
 
 function ChannelList(props) {
     return (
@@ -31,5 +32,5 @@ const mapStateToProps = function (state) {
 }
 
 
-const ChannelListContainer = connect(mapStateToProps)(ChannelList)
+const ChannelListContainer = withRouter(connect(mapStateToProps)(ChannelList))
 export default ChannelListContainer
