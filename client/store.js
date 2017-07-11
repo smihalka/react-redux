@@ -101,12 +101,14 @@ export function fetchChannels() {
     }
 }
 
-export function postChannel(channel) {
+export function postChannel(channel,ownProps) {
+
     console.log('postChannel---',channel)
     return function thunk(dispatch) {
         return axios.post('/api/channels', channel)
             .then(res => res.data)
             .then(newChannel=> {
+              ownProps.history.push(`/channels/${newChannel.id}`) 
                 const action = getChannel(newChannel);
                 dispatch(action);
                socket.emit('new-channel', newChannel);

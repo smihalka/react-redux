@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import store, { writeChannel, postChannel } from '../store';
 
 function NewChannelEntry (props) {
-    console.log('newChannelEntry-----',props.newChannelEntry)
+
   return (
     <form onSubmit={props.handleSubmit}>
       <div className="form-group">
@@ -25,7 +25,7 @@ function NewChannelEntry (props) {
 /** Write your `connect` component below! **/
 
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function (state,ownProps) {
     return {
       newChannelEntry: state.newChannelEntry
     }
@@ -39,9 +39,7 @@ const mapDispatchToProps = function(dispatch, ownProps){
      handleSubmit(event){
        event.preventDefault()
        const channelName = event.target.name.value
-         console.log('channelName----',channelName)
-       dispatch(postChannel({name: channelName}));
-
+       dispatch(postChannel({name: channelName},ownProps));
      }
    }
 }
