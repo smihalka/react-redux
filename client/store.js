@@ -65,16 +65,16 @@ export function fetchMessages () {
 
 export function postMessage (message) {
 
-  return function thunk (dispatch) {
-    return axios.post('/api/messages', message)
-      .then(res => res.data)
-      .then(newMessage => {
-        const action = getMessage(newMessage);
-        dispatch(action);
-        socket.emit('new-message', newMessage);
-      });
-  }
-
+    return function thunk(dispatch) {
+        return axios.post('/api/messages', message)
+            .then(res => res.data)
+            .then(newMessage => {
+                const action = getMessage(newMessage);
+                dispatch(action);
+                socket.emit('new-message', newMessage);
+            });
+    }
+}
 // /api/channels
 
 export function fetchChannels (){
@@ -82,7 +82,7 @@ export function fetchChannels (){
     return axios.get('/api/channels')
     .then(res => res.data)
     .then(channels => {
-      const action = getChannels(channels)
+      const action = getChannels(channels);
       dispatch(action)
     })
   }
